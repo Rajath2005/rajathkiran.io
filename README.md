@@ -76,26 +76,3 @@ open index.html   # Mac
 ---
 💙 If you like my work, consider giving this repo a ⭐!  
 Happy Coding! 🚀
-
-
-
-### Key Features of the `README.md`:
-1. **Header with Banner**: Includes a banner image and a welcoming introduction.
-2. **Features Section**: Highlights the key features of the portfolio.
-3. **Tech Stack**: Lists the technologies and tools used.
-4. **Project Structure**: Provides a clear folder structure for the project.
-5. **Live Preview**: Links to the live version of the portfolio.
-6. **Installation & Setup**: Step-by-step guide to run the project locally.
-7. **How to Use**: Explains how to navigate and interact with the portfolio.
-8. **Interactive Elements**: Describes the interactive features of the website.
-9. **Future Enhancements**: Lists planned improvements for the project.
-10. **Connect With Me**: Provides contact information and links to social profiles.
-11. **Call to Action**: Encourages users to star the repository if they like the project.
-
----
-
-### How to Use:
-1. Replace placeholders like `Rajath2005`, `https://rajathkiran.netlify.app/`, and `rajathajeru@gmail.com ` with your actual details.
-2. Add a banner image link or remove the `![Portfolio Banner]` line if you don’t have one.
-3. Commit the `README.md` file to your repository.
-
