@@ -76,3 +76,12 @@ open index.html   # Mac
 ---
 💙 If you like my work, consider giving this repo a ⭐!  
 Happy Coding! 🚀
+
+
+## 🌟 Features
+- Personal Portfolio Website
+- Responsive Web Design
+- Hosted on GitHub Pages
+# 🌐 My Personal Portfolio 🚀  
+Showcasing my web development projects, skills, and certifications!
+
