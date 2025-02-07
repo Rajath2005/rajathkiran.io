@@ -1,7 +1,5 @@
 # 🌐 My Personal Portfolio 🚀
 
-![Portfolio Banner](https://rajathkiran.netlify.app/)
-
 Welcome to my **Personal Portfolio Website**! This is a fully responsive, interactive, and modern website showcasing my skills, projects, experiences, and certifications. 🌟
 
 ## 📌 Features
