@@ -68,7 +68,7 @@ open index.html   # Mac
 - [ ] Add Projects done by me and Keep it Updated
 
 ## 📬 Connect With Me
-📩 **Email**: your-email@example.com  
+📩 **Email**: rajathajeru@gmail.com 
 💼 **LinkedIn**: [My LinkedIn](https://www.linkedin.com/in/rajath-kiran/)  
 💻 **GitHub**: [My GitHub](https://github.com/Rajath2005)  
 🖼️ **Portfolio**: [Visit Here](https://rajathkiran.netlify.app/)  
