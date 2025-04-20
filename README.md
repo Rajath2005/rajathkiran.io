@@ -9,8 +9,14 @@ Welcome to my **Personal Portfolio Website**! This is a fully responsive, intera
 ✅ **Certificates Showcase** - Click to view detailed images of my achievements.  
 ✅ **Skills & Technologies** - A progress bar visualization of my expertise.  
 ✅ **Contact Section** - Easy ways to connect with me via email, LinkedIn, and GitHub.  
-✅ **Dark Mode UI** - A modern dark-themed interface with neon highlights.  
+✅ **Dark Mode UI** - A modern dark-themed interface with neon highlights. 
 
+## 📌 Portfolio Images 
+<div align="center">
+  <img src="src/components/images/light.jpg" alt="MediQ Light Mode" width="400"/>
+  &nbsp;&nbsp;&nbsp;
+  <img src="src/components/images/dark.jpg" alt="MediQ Dark Mode" width="400"/>
+</div>
 ## 🛠️ Tech Stack
 - **Frontend:** HTML, CSS (Custom + Animations), JavaScript (Vanilla)  
 - **Libraries:** Ionicons, Google Fonts, Custom Animations  
