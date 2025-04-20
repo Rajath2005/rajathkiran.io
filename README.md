@@ -15,7 +15,10 @@ Welcome to my **Personal Portfolio Website**! This is a fully responsive, intera
 ### For Desktop
 <div align="center">
   <img src="Desktop.jpg" alt="Portfolio"/>
+</div>
+```
   ### For Mobile-Screen
+  <div>
   <img src="mobile.png" alt="Portfolio"/>
 </div>
 ## 🛠️ Tech Stack
