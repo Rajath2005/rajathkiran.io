@@ -13,9 +13,9 @@ Welcome to my **Personal Portfolio Website**! This is a fully responsive, intera
 
 ## 📌 Portfolio Images 
 <div align="center">
-  <img src="Desktop.jpg" alt="MediQ Light Mode" width="400"/>
+  <img src="Desktop.jpg" alt="Portfolio"/>
   &nbsp;&nbsp;&nbsp;
-  <img src="mobile.png" alt="MediQ Dark Mode" width="400"/>
+  <img src="mobile.png" alt="Portfolio"/>
 </div>
 ## 🛠️ Tech Stack
 - **Frontend:** HTML, CSS (Custom + Animations), JavaScript (Vanilla)  
