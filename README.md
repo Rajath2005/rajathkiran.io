@@ -12,9 +12,10 @@ Welcome to my **Personal Portfolio Website**! This is a fully responsive, intera
 ✅ **Dark Mode UI** - A modern dark-themed interface with neon highlights. 
 
 ## 📌 Portfolio Images 
+### For Desktop
 <div align="center">
   <img src="Desktop.jpg" alt="Portfolio"/>
-  &nbsp;&nbsp;&nbsp;
+  ### For Mobile-Screen
   <img src="mobile.png" alt="Portfolio"/>
 </div>
 ## 🛠️ Tech Stack
