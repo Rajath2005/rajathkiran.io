@@ -23,7 +23,7 @@ Welcome to my **Personal Portfolio Website**! This is a fully responsive, intera
   <img src="mobile.png" alt="Portfolio" width="300"/>
 </div>
 
-## 🛠️ Tech Stack
+## 🛠️ Tech What i used
 - **Frontend:** HTML, CSS (Custom + Animations), JavaScript (Vanilla)  
 - **Libraries:** Ionicons, Google Fonts, Custom Animations  
 - **Tools Used:** Figma (for Design), Canva (for Graphics), VS Code (for Development)  
