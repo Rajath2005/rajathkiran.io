@@ -361,6 +361,7 @@ article.active {
   box-shadow: 0 0 10px var(--cyber-cyan);
 }
 
+
 /*-----------------------------------*\
   #MAIN
 \*-----------------------------------*/
@@ -521,6 +522,111 @@ main {
 
 .social-item .social-link:hover {
   color: var(--light-gray);
+}
+/* Coding Profiles Section Styles */
+.coding-profiles-section {
+  margin-top: 20px;
+}
+
+.coding-profiles-title {
+  color: var(--light-gray-70);
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coding-profiles-title ion-icon {
+  font-size: 16px;
+  color: var(--cyber-cyan);
+}
+
+.coding-profiles-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.coding-profile-item {
+  background: var(--border-gradient-neon);
+  border-radius: 12px;
+  padding: 1px;
+  position: relative;
+  box-shadow: var(--shadow-2);
+  transition: transform var(--transition-1), box-shadow var(--transition-1);
+}
+
+.coding-profile-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px hsla(195, 100%, 68%, 0.3);
+}
+
+.coding-profile-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 8px;
+  background: var(--eerie-black-2);
+  border-radius: 12px;
+  color: var(--light-gray);
+  text-decoration: none;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-500);
+  transition: color var(--transition-1);
+  z-index: 1;
+}
+
+.coding-profile-link:hover {
+  color: var(--cyber-cyan);
+}
+
+.coding-profile-link ion-icon {
+  font-size: 16px;
+  color: var(--neon-blue);
+  transition: color var(--transition-1);
+}
+
+.coding-profile-link:hover ion-icon {
+  color: var(--cyber-cyan);
+}
+
+/* Responsive adjustments */
+@media (max-width: 580px) {
+  .coding-profiles-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  .coding-profile-link {
+    padding: 12px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 580px) {
+  .coding-profiles-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+@media (min-width: 1250px) {
+  .coding-profiles-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .coding-profile-link {
+    justify-content: flex-start;
+    padding-left: 15px;
+  }
 }
 
 
