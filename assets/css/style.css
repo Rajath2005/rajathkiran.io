@@ -384,11 +384,20 @@ main {
   margin-bottom: 15px;
   max-height: 112px;
   overflow: hidden;
-  transition: var(--transition-2);
+  transition: max-height var(--transition-2);
+  background: var(--eerie-black-2);
+  border: 1px solid var(--onyx);
+  border-radius: 20px;
+  padding: 15px;
+  box-shadow: var(--shadow-2);
+  z-index: 1;
 }
 
 .sidebar.active {
-  max-height: 405px;
+  max-height: 100vh !important; /* Use viewport height and force with !important */
+  overflow-y: auto !important; /* Enable scrolling */
+  height: auto;
+  transition: max-height var(--transition-2);
 }
 
 .sidebar-info {
@@ -2755,13 +2764,15 @@ Edit
    * SIDEBAR
    */
   .sidebar {
-    max-height: 150px;
-    /* Reduce height for a cleaner layout */
+    max-height: 250px;  /* ← CHANGED FROM 150px */
     margin-bottom: 20px;
+    overflow: visible;   /* ← ADD THIS LINE */
   }
 
   .sidebar.active {
-    max-height: 525px;
+    max-height: none;    /* ← CHANGED FROM 525px */
+    height: auto;        /* ← ADD THIS LINE */
+    overflow: visible;   /* ← ADD THIS LINE */
   }
 
   .avatar-box img {
@@ -2917,5 +2928,20 @@ Edit
 
   .content-card {
     padding: 20px; /* Adjust padding so content doesn't get squeezed */
+  }
+}
+
+/* Mobile sidebar content visibility fix */
+@media (max-width: 580px) {
+  .sidebar.active .sidebar-info_more {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  .sidebar.active .coding-profiles-section,
+  .sidebar.active .social-list {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 }
