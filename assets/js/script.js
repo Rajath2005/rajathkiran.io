@@ -259,3 +259,26 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
   });
 }
+
+// Certificates expand/collapse toggle
+document.addEventListener("DOMContentLoaded", function () {
+  // Certificates toggle logic
+  const btn = document.getElementById('view-more-certificates');
+  const hiddenCertificates = document.querySelectorAll('.certificate-hidden');
+  let expanded = false;
+
+  if (btn) {
+    btn.addEventListener('click', function () {
+      expanded = !expanded;
+      hiddenCertificates.forEach(function (el) {
+        el.style.display = expanded ? 'list-item' : 'none';
+      });
+      btn.textContent = expanded ? 'View Less Certificates' : 'View More Certificates';
+    });
+    // Ensure hidden certificates are hidden on load
+    hiddenCertificates.forEach(function (el) {
+      el.style.display = 'none';
+    });
+  }
+
+});

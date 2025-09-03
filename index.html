@@ -872,7 +872,7 @@
         <section class="certificates">
           <h3>My Certifications </h3>
           <ul class="certificate-list">
-            <!-- Certificate 1 -->
+            <!-- Show first 4 certificates always -->
             <li class="certificate-item">
               <img src="assets/images/certificate-1.jpg" alt="Certificate 1" class="thumbnail"
                 data-full="assets/images/certificate-1.jpg">
@@ -883,7 +883,6 @@
                 data-full="assets/images/certificate-2.jpg">
               <p>Web Development Certification 🚀</p>
             </li>
-            <!-- Add more certificates as needed -->
             <li class="certificate-item">
               <img src="assets/images/cerificate-3.jpg" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-3.jpg">
@@ -894,64 +893,91 @@
                 data-full="assets/images/certificate-4.jpg">
               <p>DSA 🏅</p>
             </li>
-            <li class="certificate-item">
+            <!-- Hide the rest by default -->
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-5.jpg" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-5.jpg">
               <p>Linux for Beginners 🏅</p>
             </li>
-            <li class="certificate-item">
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-6.jpg" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-6.jpg">
               <p>Programming Using C++ 🏅</p>
             </li>
-            <li class="certificate-item">
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-7.png" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-7.jpg">
               <p>Fundamental of CSS 🏅</p>
             </li>
-            <li class="certificate-item">
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-8.jpg" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-8.jpg">
               <p>Responsive Web Design 🏅</p>
             </li>
-            <li class="certificate-item">
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-10.png" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-10.png">
               <p>Introduction to Cybersecurity Awarness 🏅</p>
             </li>
-            <li class="certificate-item">
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-9.png" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-9.jpg">
               <p>Basic CSS 🏅</p>
             </li>
-            <li class="certificate-item">
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-11.jpg" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-11.jpg">
               <p>Git Sheet 🏅</p>
             </li>
-            <li class="certificate-item">
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-12.png" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-12.jpg">
               <p>Open Source 🏅</p>
             </li>
-            <li class="certificate-item">
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-13.png" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-13.jpg">
               <p>Fundamentals of HTML 🏅</p>
             </li>
-            <li class="certificate-item">
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-14.png" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-14.jpg">
               <p>CHATGPT 🏅</p>
             </li>
-            </li>
-            <li class="certificate-item">
+            <li class="certificate-item certificate-hidden">
               <img src="assets/images/certificate-15.jpg" alt="Certificate 2" class="thumbnail"
                 data-full="assets/images/certificate-15.jpg">
               <p>Code360 Matserclass 🏅</p>
             </li>
           </ul>
+          <button id="view-more-certificates" style="
+  position: relative;
+  width: max-content;
+  margin: 25px auto 0;
+  padding: 12px 24px;
+  background: linear-gradient(to bottom right, hsl(195, 100%, 68%) 0%, hsla(285, 100%, 72%, 0.4) 50%);
+  color: hsl(0, 0%, 100%);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 12px;
+  box-shadow: 0 16px 44px hsla(220, 100%, 14%, 0.5), inset 0px 0px 12px hsla(220, 100%, 72%, 0.4);
+  z-index: 1;
+  transition: 0.18s ease-out;
+  cursor: pointer;
+  border: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  position: relative;
+  overflow: hidden;"
+  onmouseover="this.style.background='linear-gradient(to bottom right, hsl(220, 100%, 64%) 0%, hsla(200, 100%, 74%, 0.15) 50%)'; this.style.boxShadow='0 0 15px hsl(195, 100%, 72%)'; this.style.transform='translateY(-2px)'"
+  onmouseout="this.style.background='linear-gradient(to bottom right, hsl(195, 100%, 68%) 0%, hsla(285, 100%, 72%, 0.4) 50%)'; this.style.boxShadow='0 16px 44px hsla(220, 100%, 14%, 0.5), inset 0px 0px 12px hsla(220, 100%, 72%, 0.4)'; this.style.transform='translateY(0)'"
+  onmousedown="this.style.transform='translateY(0)'"
+  >View More Certificates</button>
         </section>
+
 
         <!-- Modal Structure -->
         <div id="modal" class="modal">
@@ -1448,6 +1474,7 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 
 </body>
 
