@@ -57,25 +57,25 @@
   /**
    * typography
    */
-   /* font-family */
-   --ff-poppins: 'Poppins', sans-serif;
+  /* font-family */
+  --ff-poppins: 'Poppins', sans-serif;
 
-   /* font-size */
-   --fs-1: 24px;
-   --fs-2: 18px;
-   --fs-3: 17px;
-   --fs-4: 16px;
-   --fs-5: 15px;
-   --fs-6: 14px;
-   --fs-7: 13px;
-   --fs-8: 11px;
- 
-   /* font-weight */
-   --fw-300: 300;
-   --fw-400: 400;
-   --fw-500: 500;
-   --fw-600: 600;
- 
+  /* font-size */
+  --fs-1: 24px;
+  --fs-2: 18px;
+  --fs-3: 17px;
+  --fs-4: 16px;
+  --fs-5: 15px;
+  --fs-6: 14px;
+  --fs-7: 13px;
+  --fs-8: 11px;
+
+  /* font-weight */
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-600: 600;
+
 
   /**
    * shadow (enhanced for depth)
@@ -237,7 +237,8 @@ article {
 }
 
 .icon-box:hover ion-icon {
-  color: var(--neon-blue);  /* Icon color change on hover */
+  color: var(--neon-blue);
+  /* Icon color change on hover */
 }
 
 
@@ -265,7 +266,7 @@ article.active {
 .h4,
 .h5 {
   color: var(--neon-blue);
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .h2 {
@@ -394,8 +395,10 @@ main {
 }
 
 .sidebar.active {
-  max-height: 100vh !important; /* Use viewport height and force with !important */
-  overflow-y: auto !important; /* Enable scrolling */
+  max-height: 100vh !important;
+  /* Use viewport height and force with !important */
+  overflow-y: auto !important;
+  /* Enable scrolling */
   height: auto;
   transition: max-height var(--transition-2);
 }
@@ -532,6 +535,7 @@ main {
 .social-item .social-link:hover {
   color: var(--light-gray);
 }
+
 /* Coding Profiles Section Styles */
 .coding-profiles-section {
   margin-top: 20px;
@@ -612,7 +616,7 @@ main {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-  
+
   .coding-profile-link {
     padding: 12px 10px;
     font-size: 12px;
@@ -631,7 +635,7 @@ main {
     grid-template-columns: 1fr;
     gap: 12px;
   }
-  
+
   .coding-profile-link {
     justify-content: flex-start;
     padding-left: 15px;
@@ -1067,6 +1071,7 @@ main {
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
+
 .pagination-dots {
   text-align: center;
   margin-top: 10px;
@@ -1103,14 +1108,17 @@ main {
 .certificates h3 {
   color: var(--neon-blue);
   font-weight: var(--fw-600);
-  text-align: left; /* Align text to the left */
+  text-align: left;
+  /* Align text to the left */
   font-size: var(--fs-2);
   margin-bottom: 45px;
   /* Remove margin-right if it's not needed */
 }
+
 .certificate-list {
   display: flex;
-  justify-content: space-evenly; /* Spacing similar to My Work */
+  justify-content: space-evenly;
+  /* Spacing similar to My Work */
   align-items: center;
   flex-wrap: wrap;
   gap: 20px;
@@ -1118,10 +1126,14 @@ main {
 
 
 .certificate-item {
-  background: var(--eerie-black-3); /* Match the My Work section */
-  border-radius: 20px; /* Adjust border-radius for rounded look */
-  padding: 1.8rem; /* Reduce padding for better spacing */
-  box-shadow: var(--shadow-3); /* Softer shadow */
+  background: var(--eerie-black-3);
+  /* Match the My Work section */
+  border-radius: 20px;
+  /* Adjust border-radius for rounded look */
+  padding: 1.8rem;
+  /* Reduce padding for better spacing */
+  box-shadow: var(--shadow-3);
+  /* Softer shadow */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1138,9 +1150,11 @@ main {
 
 .thumbnail {
   width: 100%;
-  max-width: 250px; /* Slightly larger for balance */
+  max-width: 250px;
+  /* Slightly larger for balance */
   height: auto;
-  border-radius: 12px; /* More rounded */
+  border-radius: 12px;
+  /* More rounded */
   object-fit: cover;
 }
 
@@ -1152,7 +1166,8 @@ main {
 .certificate-item p {
   color: var(--white-2);
   font-size: var(--fs-4);
-  font-weight: var(--fw-600); /* Make text bold */
+  font-weight: var(--fw-600);
+  /* Make text bold */
   text-align: center;
   margin-top: 1rem;
   display: flex;
@@ -2762,15 +2777,20 @@ Edit
    * SIDEBAR
    */
   .sidebar {
-    max-height: 250px;  /* ← CHANGED FROM 150px */
+    max-height: 250px;
+    /* ← CHANGED FROM 150px */
     margin-bottom: 20px;
-    overflow: visible;   /* ← ADD THIS LINE */
+    overflow: visible;
+    /* ← ADD THIS LINE */
   }
 
   .sidebar.active {
-    max-height: none;    /* ← CHANGED FROM 525px */
-    height: auto;        /* ← ADD THIS LINE */
-    overflow: visible;   /* ← ADD THIS LINE */
+    max-height: none;
+    /* ← CHANGED FROM 525px */
+    height: auto;
+    /* ← ADD THIS LINE */
+    overflow: visible;
+    /* ← ADD THIS LINE */
   }
 
   .avatar-box img {
@@ -2841,28 +2861,32 @@ Edit
     /* Single column layout for better spacing */
     gap: 20px;
   }
+
   .filter-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     margin-bottom: 20px;
-    color: white; /* Ensures text is visible */
-}
+    color: white;
+    /* Ensures text is visible */
+  }
 
-/* If the filters are links or specific elements */
-.filter-list a, 
-.filter-list span {
-    color: white; /* Makes sure child elements are visible */
-    text-decoration: none; /* Optional: removes underline from links */
-}
+  /* If the filters are links or specific elements */
+  .filter-list a,
+  .filter-list span {
+    color: white;
+    /* Makes sure child elements are visible */
+    text-decoration: none;
+    /* Optional: removes underline from links */
+  }
 
-/* Ensure it applies on mobile screens */
-@media (max-width: 768px) {
+  /* Ensure it applies on mobile screens */
+  @media (max-width: 768px) {
     .filter-list {
-        color: white !important;
+      color: white !important;
     }
-}
+  }
 
   /**
    * CONTACT SECTION
@@ -2898,13 +2922,19 @@ Edit
   }
 
 }
-@media (max-width: 768px) { /* Apply styles for mobile */
+
+@media (max-width: 768px) {
+
+  /* Apply styles for mobile */
   .testimonials-avatar-box {
-    position: relative; /* Change to relative to avoid overlap */
-    top: auto; 
+    position: relative;
+    /* Change to relative to avoid overlap */
+    top: auto;
     left: auto;
-    margin: 0 auto 10px auto; /* Center it with spacing */
-    width: 50px; /* Reduce size for mobile */
+    margin: 0 auto 10px auto;
+    /* Center it with spacing */
+    width: 50px;
+    /* Reduce size for mobile */
     height: 50px;
     border-radius: 50%;
     display: flex;
@@ -2920,12 +2950,15 @@ Edit
   }
 
   .testimonials-item {
-    text-align: center; /* Center content for better alignment */
-    padding-top: 20px; /* Ensure space for the avatar */
+    text-align: center;
+    /* Center content for better alignment */
+    padding-top: 20px;
+    /* Ensure space for the avatar */
   }
 
   .content-card {
-    padding: 20px; /* Adjust padding so content doesn't get squeezed */
+    padding: 20px;
+    /* Adjust padding so content doesn't get squeezed */
   }
 }
 
@@ -2935,7 +2968,7 @@ Edit
     opacity: 1 !important;
     visibility: visible !important;
   }
-  
+
   .sidebar.active .coding-profiles-section,
   .sidebar.active .social-list {
     display: block !important;
