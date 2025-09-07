@@ -1,6 +1,5 @@
 'use strict';
 
-
 // Element toggle function with error handling
 const elementToggleFunc = (elem) => {
   if (elem && elem.classList) {
@@ -42,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setTimeout(typeEffect, 500);
 });
 
-
 // Sidebar variables
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
@@ -54,9 +52,6 @@ if (sidebar && sidebarBtn) {
 } else {
   console.warn("Sidebar or Sidebar Button not found in the DOM.");
 }
-
-
-
 
 // testimonials variables
 const testimonialsItems = document.querySelectorAll("[data-testimonials-item]");
@@ -95,12 +90,7 @@ modalContainers.forEach((modal) => {
   overlay.addEventListener("click", () => testimonialsModalFunc(modal));
 });
 
-
-
-
 // Code for My Certificates Scetion
-
-
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("modal");
   const modalImg = document.getElementById("modal-image");
@@ -118,30 +108,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // code for paginations
   const slides = document.querySelectorAll(".experience-card");
-const dotsContainer = document.querySelector(".pagination-dots");
+  const dotsContainer = document.querySelector(".pagination-dots");
 
-// Create dots dynamically
-slides.forEach((_, index) => {
-  let dot = document.createElement("span");
-  dot.classList.add("dot");
-  if (index === 0) dot.classList.add("active");
-  dot.addEventListener("click", () => showSlide(index));
-  dotsContainer.appendChild(dot);
-});
-
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.style.display = i === index ? "block" : "none";
+  // Create dots dynamically
+  slides.forEach((_, index) => {
+    let dot = document.createElement("span");
+    dot.classList.add("dot");
+    if (index === 0) dot.classList.add("active");
+    dot.addEventListener("click", () => showSlide(index));
+    dotsContainer.appendChild(dot);
   });
 
-  document.querySelectorAll(".dot").forEach((dot, i) => {
-    dot.classList.toggle("active", i === index);
-  });
-}
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? "block" : "none";
+    });
 
-// Initialize first slide
-showSlide(0);
+    document.querySelectorAll(".dot").forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
 
+  // Initialize first slide
+  showSlide(0);
 
   // Close modal on close button click
   closeBtn.addEventListener("click", function () {
@@ -155,7 +144,6 @@ showSlide(0);
     }
   });
 });
-
 
 // custom select variables
 const select = document.querySelector("[data-select]");
@@ -215,8 +203,6 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 }
 
-
-
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
@@ -235,8 +221,6 @@ for (let i = 0; i < formInputs.length; i++) {
 
   });
 }
-
-
 
 // page navigation variables
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
@@ -280,5 +264,4 @@ document.addEventListener("DOMContentLoaded", function () {
       el.style.display = 'none';
     });
   }
-
 });
