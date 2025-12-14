@@ -226,6 +226,8 @@ for (let i = 0; i < formInputs.length; i++) {
 const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
+import { animatePageChange } from './animations.js';
+
 // add event to all nav link
 for (let i = 0; i < navigationLinks.length; i++) {
   navigationLinks[i].addEventListener("click", function () {
@@ -235,6 +237,9 @@ for (let i = 0; i < navigationLinks.length; i++) {
         pages[i].classList.add("active");
         navigationLinks[i].classList.add("active");
         window.scrollTo(0, 0);
+
+        // Trigger animation for the new page
+        animatePageChange(pages[i]);
       } else {
         pages[i].classList.remove("active");
         navigationLinks[i].classList.remove("active");
@@ -246,7 +251,6 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // Certificates expand/collapse toggle
 document.addEventListener("DOMContentLoaded", function () {
-  // Certificates toggle logic
   const btn = document.getElementById('view-more-certificates');
   const hiddenCertificates = document.querySelectorAll('.certificate-hidden');
   let expanded = false;
@@ -262,6 +266,63 @@ document.addEventListener("DOMContentLoaded", function () {
     // Ensure hidden certificates are hidden on load
     hiddenCertificates.forEach(function (el) {
       el.style.display = 'none';
+    });
+  }
+});
+
+import { initTiltEffect } from './tilt-effect.js';
+import { initCustomCursor } from './cursor.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Only init if not mobile for performance/UX
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    initTiltEffect();
+    initCustomCursor();
+  }
+
+  // Scroll Indicator Logic
+  const scrollIndicator = document.getElementById('scroll-indicator');
+  if (scrollIndicator) {
+    // Make it functional: Click to Scroll
+    scrollIndicator.style.cursor = 'pointer'; // Visual cue
+    scrollIndicator.style.pointerEvents = 'auto'; // Re-enable pointer events since CSS had it as 'none'
+
+    scrollIndicator.addEventListener('click', () => {
+      // Correct logic: Find the ACTIVE page first
+      const activeArticle = document.querySelector('article.active');
+
+      if (activeArticle) {
+        // Try to find specific sections inside the ACTIVE page
+        // Priority: Service section (About) -> Second Section (Resume/others) -> First Section -> Fallback
+        const targetSection = activeArticle.querySelector('.service') ||
+          activeArticle.querySelector('section:nth-of-type(2)') ||
+          activeArticle.querySelector('section');
+
+        if (targetSection) {
+          // Offset for fixed navbar/header
+          const headerOffset = 50;
+          const elementPosition = targetSection.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        } else {
+          // Generic fallback if no sections found
+          window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+        }
+      } else {
+        window.scrollBy({ top: window.innerHeight * 0.8, behavior: 'smooth' });
+      }
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        scrollIndicator.classList.add('hidden');
+      } else {
+        scrollIndicator.classList.remove('hidden');
+      }
     });
   }
 });
