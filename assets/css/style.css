@@ -2477,11 +2477,7 @@ textarea.form-input::-webkit-resizer {
   }
 }
 
-/* primary optimized CSS for Android Mobile Screens (≤ 480px)
-css
-Copy
-Edit
-**/
+/* primary optimized CSS for Android Mobile Screens (≤ 480px) */
 @media (max-width: 480px) {
 
   .sidebar,
