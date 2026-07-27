@@ -270,10 +270,165 @@
     ]
   }
   </script>
+  <!-- Immersive Preloader CSS -->
+  <style id="preloader-styles">
+    #premium-preloader {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, hsl(230, 45%, 12%) 0%, hsl(230, 50%, 6%) 50%, hsl(230, 50%, 2%) 100%);
+      overflow: hidden;
+      transition: opacity 0.8s ease, visibility 0.8s ease;
+    }
+
+    .preloader-center-stage {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    .orbital-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      filter: drop-shadow(0 0 12px hsla(220, 100%, 68%, 0.4));
+      transform: rotate(-90deg);
+    }
+
+    .ring-track {
+      fill: none;
+      stroke: hsla(230, 50%, 22%, 0.3);
+      stroke-width: 2px;
+    }
+
+    .ring-progress {
+      fill: none;
+      stroke: url(#orbit-gradient);
+      stroke-width: 2px;
+      stroke-linecap: round;
+      stroke-dasharray: 565.48; /* 2 * pi * 90 */
+      stroke-dashoffset: 565.48;
+      transition: stroke-dashoffset 0.1s ease-out;
+    }
+
+    .hero-lottie {
+      position: relative;
+      z-index: 2;
+      width: 180px;
+      height: 180px;
+      filter: drop-shadow(0 0 25px hsla(220, 100%, 68%, 0.3));
+      transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+    }
+
+    .preloader-typography {
+      text-align: center;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .brand-name {
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      font-weight: 300;
+      letter-spacing: 12px;
+      text-transform: uppercase;
+      margin: 0;
+      margin-left: 12px; /* Offset for letter-spacing visual centering */
+      background: linear-gradient(to right, hsl(195, 100%, 80%), hsl(220, 100%, 75%));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: cinematicTextIn 1.2s cubic-bezier(0.2, 1, 0.2, 1) forwards 0.3s;
+    }
+
+    .brand-tagline {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 3px;
+      color: hsla(0, 0%, 88%, 0.6);
+      margin: 0;
+      margin-left: 3px;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: cinematicTextIn 1.2s cubic-bezier(0.2, 1, 0.2, 1) forwards 0.6s;
+    }
+    
+    .brand-tagline .dot {
+      color: var(--neon-blue, hsl(220, 100%, 68%));
+      font-weight: bold;
+    }
+
+    @keyframes cinematicTextIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+        letter-spacing: 14px;
+      }
+    }
+
+    /* Warp Exit Animations */
+    #premium-preloader.warp-exit .orbital-ring {
+      transform: rotate(-90deg) scale(4);
+      opacity: 0;
+      transition: transform 1s cubic-bezier(0.6, 0, 0.1, 1), opacity 0.8s ease-out;
+    }
+
+    #premium-preloader.warp-exit .hero-lottie {
+      transform: scale(3) translateY(-20px);
+      opacity: 0;
+      transition: transform 0.8s cubic-bezier(0.6, 0, 0.1, 1), opacity 0.5s ease-out 0.1s;
+    }
+
+    #premium-preloader.warp-exit .preloader-typography {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.5s cubic-bezier(0.6, 0, 0.1, 1);
+    }
+    
+    #premium-preloader.fade-out {
+      opacity: 0;
+      visibility: hidden;
+    }
+  </style>
 </head>
 
 <body>
 
+  <!-- Immersive Preloader -->
+  <div id="premium-preloader">
+    <div class="preloader-center-stage">
+      <svg class="orbital-ring" viewBox="0 0 200 200">
+        <defs>
+          <linearGradient id="orbit-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="hsl(220, 100%, 68%)" />
+            <stop offset="50%" stop-color="hsl(195, 100%, 72%)" />
+            <stop offset="100%" stop-color="hsl(285, 100%, 78%)" />
+          </linearGradient>
+        </defs>
+        <circle class="ring-track" cx="100" cy="100" r="90"></circle>
+        <circle class="ring-progress" id="orbit-progress" cx="100" cy="100" r="90"></circle>
+      </svg>
+      <div id="lottie-loader" class="hero-lottie"></div>
+    </div>
+    <div class="preloader-typography">
+      <h1 class="brand-name">Rajath Kiran A</h1>
+      <p class="brand-tagline">Cloud Engineer <span class="dot">·</span> AI/ML Developer</p>
+    </div>
+  </div>
   <!-- OS Intelligence Layer Overlays -->
   <div id="glass-morph-overlay" class="glass-morph-overlay"></div>
 
@@ -2100,6 +2255,92 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 
+  <!-- Immersive Loader Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+  <script>
+    (() => {
+      // ── Lottie Init ──
+      const loaderContainer = document.getElementById('lottie-loader');
+      if (loaderContainer && typeof lottie !== 'undefined') {
+        lottie.loadAnimation({
+          container: loaderContainer,
+          renderer: 'svg',
+          loop: true,
+          autoplay: true,
+          path: 'assets/Loading%2040%20_%20Paperplane.json'
+        });
+      }
+
+      // ── Orbital Progress Tracker ──
+      const orbit = document.getElementById('orbit-progress');
+      const maxOffset = 565.48; // Circumference of r=90
+      let progress = 0;
+      let loaded = false;
+
+      function updateOrbit(targetPct, duration) {
+        const start = progress;
+        const startTime = performance.now();
+        
+        function step(now) {
+          const elapsed = now - startTime;
+          const t = Math.min(elapsed / duration, 1);
+          // Easing function (cubic out)
+          const easeT = 1 - Math.pow(1 - t, 3);
+          
+          progress = start + (targetPct - start) * easeT;
+          
+          if (orbit) {
+            const currentOffset = maxOffset - (maxOffset * (progress / 100));
+            orbit.style.strokeDashoffset = currentOffset;
+          }
+          
+          if (t < 1 && !loaded) {
+            requestAnimationFrame(step);
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      // Simulated loading sequence
+      // Jump to 30% quickly
+      updateOrbit(30, 800);
+      // Smooth creep to 75%
+      setTimeout(() => { if (!loaded) updateOrbit(75, 4000); }, 900);
+
+      // ── Cinematic Warp Exit ──
+      function triggerWarpExit() {
+        loaded = true;
+        const preloader = document.getElementById('premium-preloader');
+        if (!preloader) return;
+
+        // Force complete orbit rapidly
+        if (orbit) {
+          orbit.style.transition = 'stroke-dashoffset 0.4s cubic-bezier(0.2, 1, 0.3, 1)';
+          orbit.style.strokeDashoffset = 0;
+        }
+
+        // Wait for orbit completion, then WARP
+        setTimeout(() => {
+          preloader.classList.add('warp-exit');
+          
+          // Fade entirely and remove from DOM
+          setTimeout(() => {
+            preloader.classList.add('fade-out');
+            setTimeout(() => {
+              preloader.style.display = 'none';
+              const styleTag = document.getElementById('preloader-styles');
+              if (styleTag) styleTag.remove();
+            }, 800); // Wait for fade
+          }, 800); // Wait for warp animations
+        }, 500); 
+      }
+
+      window.addEventListener('load', () => {
+        // Minimum time to appreciate the initial animation
+        setTimeout(triggerWarpExit, 1200);
+      });
+    })();
+  </script>
 </body>
 
 </html>
