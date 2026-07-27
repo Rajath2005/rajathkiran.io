@@ -55,7 +55,7 @@ const ENVIRONMENTS = {
             { label: 'Technologies', value: 'GCP · K8s · Docker' },
             { label: 'Labs Completed', value: '50+' }
         ],
-        spotlight: { title: 'Cloud Intelligence Center', desc: 'Enterprise architecture on GCP.', url: 'https://www.skills.google/public_profiles/09886862-52b8-44a4-86a5-9559a3952dd0' },
+        spotlight: { title: 'Cloud Intelligence Center', desc: 'Enterprise architecture on GCP.', url: 'http://cloud.rajathkiran.me/' },
         icon: 'cloud-outline',
         shortLabel: 'Cloud'
     },
@@ -187,7 +187,7 @@ const PROJECT_SKILLS = {
 const PROJECT_METADATA = {
     'https://github.com/Rajath2005/COPD-Detection': { recruiterPriority: 1, environments: ['neural-nexus'], featured: true, featuredType: 'ai' },
     'https://mediq-health.netlify.app/': { recruiterPriority: 2, environments: ['project-foundry', 'aurora-studio'], featured: true, featuredType: 'web' },
-    'https://www.skills.google/public_profiles/09886862-52b8-44a4-86a5-9559a3952dd0': { recruiterPriority: 3, environments: ['mission-control', 'project-foundry'] },
+    'http://cloud.rajathkiran.me/': { recruiterPriority: 3, environments: ['mission-control', 'project-foundry'] },
     'https://github.com/Rajath2005': { recruiterPriority: 4, environments: ['project-foundry', 'innovation-garage'] },
     'https://ayudost-chatbot.onrender.com/': { recruiterPriority: 5, environments: ['neural-nexus', 'innovation-garage'], featured: true, featuredType: 'ai' },
     'https://www.figma.com/community/file/1632301825171230889': { recruiterPriority: 6, environments: ['research-lab', 'aurora-studio'] },
