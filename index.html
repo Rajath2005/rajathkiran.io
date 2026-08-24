@@ -47,13 +47,9 @@
   <!--
     - custom css link
   -->
-
-
-
-  <!-- This CSS file is Detailed CSS file -->
-  <link rel="stylesheet" href="./assets/css/style.min.css">
-  <link rel="preload" href="./assets/css/os-intelligence.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="./assets/css/os-intelligence.css"></noscript>
+  <link rel="stylesheet" href="./assets/css/style.min.css?v=1.2">
+  <link rel="preload" href="./assets/css/os-intelligence.css?v=1.2" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="./assets/css/os-intelligence.css?v=1.2"></noscript>
 
   <!-- Preload Critical Image (LCP) -->
   <link rel="preload" as="image" href="./assets/images/raj.webp">
@@ -429,120 +425,18 @@
       <p class="brand-tagline">Cloud Engineer <span class="dot">·</span> AI/ML Developer</p>
     </div>
   </div>
-  <!-- OS Intelligence Layer Overlays -->
-  <div id="glass-morph-overlay" class="glass-morph-overlay"></div>
 
 
 
-  <div id="smart-recommendation-toast" class="smart-recommendation-toast">
-    <div class="toast-icon"><ion-icon name="bulb-outline"></ion-icon></div>
-    <div class="toast-content">
-      <p class="toast-title">Recommendation</p>
-      <p id="toast-message" class="toast-message">Explore <a href="http://cloud.rajathkiran.me/" target="_blank" style="color: var(--neon-blue); text-decoration: underline;">Cloud Intelligence Center</a></p>
-    </div>
-    <button id="toast-close" class="toast-close"><ion-icon name="close-outline"></ion-icon></button>
-  </div>
 
-  <!-- ========================================= -->
-  <!-- COMMAND DOCK — Unified OS Control Surface  -->
-  <!-- ========================================= -->
-  <div id="command-dock" class="command-dock" role="toolbar" aria-label="Portfolio Controls">
 
-    <!-- Section: Environment Switcher -->
-    <div class="dock-section environment-section">
-      <button id="toggle-environment-selector" class="dock-btn" aria-label="Switch Identity Environment"
-        aria-expanded="false">
-        <span class="dock-btn-icon">
-          <ion-icon name="planet-outline" id="dock-env-icon"></ion-icon>
-        </span>
-        <span class="dock-btn-label">
-          <span class="dock-label-text" id="dock-env-label">Identity</span>
-          <span class="dock-label-hint">⇧K</span>
-        </span>
-      </button>
-      <!-- Environment selector panel -->
-      <div id="environment-orbit" class="environment-orbit" role="menu" aria-label="Select Environment">
-        <!-- Injected by os-intelligence.js -->
-      </div>
-    </div>
+  <!-- Floating AI Chat Button -->
+  <button id="ai-chat-btn" class="ai-chat-fab" aria-label="Open AI Assistant" title="Ask Rajath AI (⇧A)">
+    <ion-icon name="chatbubbles-outline"></ion-icon>
+    <span class="ai-fab-badge">AI</span>
+  </button>
 
-    <div class="dock-divider"></div>
 
-    <!-- Section: Recruiter Mode -->
-    <div class="dock-section">
-      <button id="toggle-recruiter-mode" class="dock-btn" aria-label="Toggle Recruiter Fast Lane" aria-pressed="false">
-        <span class="dock-btn-icon">
-          <ion-icon name="briefcase-outline"></ion-icon>
-        </span>
-        <span class="dock-btn-label">
-          <span class="dock-label-text">Recruiter</span>
-          <span class="dock-label-hint">⇧R</span>
-        </span>
-      </button>
-    </div>
-
-    <div class="dock-divider"></div>
-
-    <!-- Section: AI Chat -->
-    <div class="dock-section">
-      <button id="ai-chat-btn" class="dock-btn" aria-label="Open AI Assistant" title="Ask Rajath AI">
-        <span class="dock-btn-icon">
-          <ion-icon name="chatbubbles-outline"></ion-icon>
-          <span class="ai-chat-badge">AI</span>
-        </span>
-        <span class="dock-btn-label">
-          <span class="dock-label-text">Ask AI</span>
-          <span class="dock-label-hint">⇧A</span>
-        </span>
-      </button>
-    </div>
-
-  </div>
-
-  <!-- Onboarding Tooltip — points to environment switcher -->
-  <div id="onboarding-tooltip" class="onboarding-tooltip">
-    <div class="onboarding-tooltip-inner">
-      <strong>Switch profiles</strong><br>
-      Cloud · AI/ML · Full Stack
-    </div>
-  </div>
-
-  <!-- Recruiter Fast Lane Banner — Professional Status Bar -->
-  <div id="recruiter-banner" class="recruiter-fast-lane-banner" role="banner" aria-hidden="true">
-    <div class="recruiter-banner-left">
-      <span class="pulse-dot"></span>
-      <span class="recruiter-banner-title">Recruiter Fast Lane</span>
-      <span class="recruiter-banner-subtitle">Optimized for 30-second scanning</span>
-    </div>
-    <div class="recruiter-score">
-      <svg class="score-ring" viewBox="0 0 36 36" aria-hidden="true">
-        <circle class="score-ring-bg" cx="18" cy="18" r="15.9" />
-        <circle class="score-ring-fill" cx="18" cy="18" r="15.9" stroke-dasharray="0, 100" />
-      </svg>
-      <span class="score-value">94</span>
-    </div>
-    <div class="recruiter-banner-right">
-      <button id="quick-apply-btn" class="recruiter-cta recruiter-cta--quick">
-        <ion-icon name="flash-outline"></ion-icon>
-        Quick Apply
-      </button>
-      <button id="jd-match-btn" class="recruiter-cta recruiter-cta--outline">
-        <ion-icon name="analytics-outline"></ion-icon>
-        Match JD
-      </button>
-      <a href="./assets/resumes/resume-fullstack.pdf" download class="recruiter-cta recruiter-cta--outline" data-resume-download>
-        <ion-icon name="download-outline"></ion-icon>
-        Download CV
-      </a>
-      <button id="hire-me-btn" class="recruiter-cta recruiter-cta--filled">
-        Hire Me
-        <ion-icon name="arrow-forward-outline"></ion-icon>
-      </button>
-      <button id="btn-exit-recruiter" class="recruiter-close" aria-label="Exit Recruiter Mode">
-        <ion-icon name="close-outline"></ion-icon>
-      </button>
-    </div>
-  </div>
 
   <main>
 
@@ -626,12 +520,11 @@
               <p class="contact-title contact-label">Resume</p>
 
               <div class="resume-btns">
-                <a href="assets/resumes/resume-fullstack.pdf" class="resume-btn" data-resume-download download>
+                <a href="assets/resumes/Rajath_Kiran_A_Resume.pdf" class="resume-btn" download>
                   <ion-icon name="download-outline"></ion-icon>
                   <span>Download Resume</span>
-                  <span id="resume-role-badge" class="resume-role-badge" style="font-size: 10px; opacity: 0.7; display: block;">Full Stack Developer</span>
                 </a>
-                <a href="resume.html" class="resume-btn resume-btn-view" data-resume-view title="View Live Resume">
+                <a href="resume.html" class="resume-btn resume-btn-view" title="View Live Resume">
                   <ion-icon name="eye-outline"></ion-icon>
                   <span>View Live Resume</span>
                 </a>
@@ -669,13 +562,7 @@
 
       </div>
 
-      <!-- OS Intelligence: Identity Explorer Card -->
-      <div class="identity-explorer-card" id="identity-explorer-card">
-        <h3 class="explorer-title">Identity Explorer</h3>
-        <ul class="explorer-list" id="explorer-list">
-          <!-- Populated dynamically by os-intelligence.js -->
-        </ul>
-      </div>
+
 
     </aside>
 
@@ -727,14 +614,7 @@
           <h2 class="h2 article-title">About me</h2>
         </header>
 
-        <!-- OS Intelligence: Hero Spotlight & Metrics -->
-        <section class="os-hero-spotlight" id="os-hero-spotlight">
-          <!-- Spotlight Card Injected by JS -->
-        </section>
 
-        <section class="os-hero-metrics" id="os-hero-metrics">
-          <!-- Dynamic metrics injected by JS -->
-        </section>
 
         <section class="about-text">
           <p>
@@ -2081,62 +1961,7 @@
 
         </article>
 
-      <!-- Quick Apply Modal -->
-      <div id="quick-apply-modal" class="project-modal-container" style="z-index: 1001;">
-        <div class="overlay" data-quick-apply-overlay></div>
-        <section class="project-modal" style="max-width: 500px; height: auto; padding: 25px;">
-          <button class="modal-close-btn" id="quick-apply-close">
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
-          <h3 class="h3" style="margin-bottom: 15px; color: var(--white-1);">Quick Apply</h3>
-          <p style="color: var(--light-gray); font-size: var(--fs-7); margin-bottom: 20px;">
-            Choose a role and I'll compose a pre-filled email with your matched resume attached.
-          </p>
-          <div id="quick-apply-roles" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
-            <button class="qa-role-btn" data-role="mission-control" style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 12px; border: 1px solid var(--jet); background: var(--eerie-black-2); color: var(--white-2); cursor: pointer; transition: all 0.2s;">
-              <ion-icon name="cloud-outline" style="font-size: 22px; color: var(--neon-blue);"></ion-icon>
-              <div style="text-align: left;"><strong>Cloud Engineer</strong><br><span style="font-size: 12px; opacity: 0.7;">GCP, Kubernetes, Docker</span></div>
-            </button>
-            <button class="qa-role-btn" data-role="neural-nexus" style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 12px; border: 1px solid var(--jet); background: var(--eerie-black-2); color: var(--white-2); cursor: pointer; transition: all 0.2s;">
-              <ion-icon name="hardware-chip-outline" style="font-size: 22px; color: #ff00ff;"></ion-icon>
-              <div style="text-align: left;"><strong>AI/ML Engineer</strong><br><span style="font-size: 12px; opacity: 0.7;">TensorFlow, PyTorch, NLP, CV</span></div>
-            </button>
-            <button class="qa-role-btn" data-role="project-foundry" style="display: flex; align-items: center; gap: 12px; padding: 14px 18px; border-radius: 12px; border: 1px solid var(--jet); background: var(--eerie-black-2); color: var(--white-2); cursor: pointer; transition: all 0.2s;">
-              <ion-icon name="code-slash-outline" style="font-size: 22px; color: #00ff00;"></ion-icon>
-              <div style="text-align: left;"><strong>Full Stack Developer</strong><br><span style="font-size: 12px; opacity: 0.7;">React, Node.js, Supabase, PostgreSQL</span></div>
-            </button>
-          </div>
-          <p style="color: var(--light-gray-70); font-size: 12px; text-align: center;">Opens your default email client with a pre-composed application</p>
-        </section>
-      </div>
 
-      <!-- JD Match Modal -->
-      <div id="jd-match-modal" class="project-modal-container" style="z-index: 1001;">
-        <div class="overlay" data-jd-overlay></div>
-        <section class="project-modal" style="max-width: 580px; height: auto; padding: 25px;">
-          <button class="modal-close-btn" id="jd-match-close">
-            <ion-icon name="close-outline"></ion-icon>
-          </button>
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-            <ion-icon name="analytics-outline" style="font-size: 24px; color: var(--neon-blue);"></ion-icon>
-            <h3 class="h3" style="color: var(--white-1); margin: 0;">Smart Match Analyzer</h3>
-          </div>
-          <p style="color: var(--light-gray); font-size: var(--fs-7); margin-bottom: 15px;">
-            Paste a job description to see role fit, relevant projects, and skill gaps — analyzed against Rajath's full profile.
-          </p>
-          <div style="margin-bottom: 10px; display: flex; gap: 6px; flex-wrap: wrap;" id="jd-sample-queries">
-            <button class="jd-sample-btn" data-sample="Looking for a Cloud Engineer intern with GCP, Kubernetes, Docker, and CI/CD experience. Must know Terraform and have experience with load balancing and microservices.">☁️ Cloud</button>
-            <button class="jd-sample-btn" data-sample="Seeking an AI/ML intern skilled in TensorFlow, PyTorch, NLP, and computer vision. Experience with deep learning, RAG systems, and LLMs preferred.">🧠 AI/ML</button>
-            <button class="jd-sample-btn" data-sample="Full Stack Developer intern needed. React, Node.js, PostgreSQL, and REST API experience required. Knowledge of Tailwind CSS and Supabase is a plus.">⚡ Full Stack</button>
-          </div>
-          <textarea id="jd-input" rows="5" placeholder="Paste job description here..." style="width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--jet); background: var(--eerie-black-2); color: var(--white-2); font-family: inherit; font-size: 14px; resize: vertical; margin-bottom: 12px; box-sizing: border-box;"></textarea>
-          <button id="jd-analyze-btn" class="form-btn" style="width: 100%; justify-content: center;">
-            <ion-icon name="search-outline"></ion-icon>
-            <span>Analyze Match</span>
-          </button>
-          <div id="jd-results" style="display: none; margin-top: 16px;"></div>
-        </section>
-      </div>
 
       <!-- Project Showcase Modal -->
       <div class="project-modal-container" data-project-modal-container>

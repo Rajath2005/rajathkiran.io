@@ -1,24 +1,15 @@
 (function(){
-  const role = new URLSearchParams(location.search).get('role') || 'project-foundry';
-  const RESUME_MAP = {
-    'mission-control': { label: 'Cloud Engineer', file: 'Rajath Kiran A - Resume.pdf' },
-    'neural-nexus': { label: 'AI/ML Engineer', file: 'Rajath_Kiran_ML_Intern_Resume.pdf' },
-    'aurora-studio': { label: 'Full Stack Developer', file: 'Rajath_Kiran_FullStack_ATS_Resume.pdf' },
-    'research-lab': { label: 'AI/ML Researcher', file: 'Rajath_Kiran_ML_Intern_Resume.pdf' },
-    'project-foundry': { label: 'Full Stack Developer', file: 'Rajath_Kiran_FullStack_ATS_Resume.pdf' },
-    'innovation-garage': { label: 'Prototyper & Hacker', file: 'Rajath_Kiran_OpenSource_Hackathon_Resume.pdf' }
-  };
-  const resumeConfig = RESUME_MAP[role] || RESUME_MAP['project-foundry'];
-  const pdfUrl = `./assets/resumes/${resumeConfig.file}`;
+  const pdfUrl = `./assets/resumes/Rajath_Kiran_A_Resume.pdf`;
+  const resumeFile = 'Rajath_Kiran_A_Resume.pdf';
 
   const $ = id => document.getElementById(id);
 
   const pageTitle = $('page-title');
   const roleBadge = $('role-badge');
-  const titleText = `Rajath Kiran A — ${resumeConfig.label} Resume`;
+  const titleText = `Rajath Kiran A — Resume`;
   if (pageTitle) pageTitle.textContent = titleText;
   document.title = pageTitle ? pageTitle.textContent : titleText;
-  if (roleBadge) roleBadge.textContent = resumeConfig.label;
+  if (roleBadge) roleBadge.style.display = 'none';
 
   const toolbar = $('toolbar');
   const canvas = $('pdfCanvas');
@@ -207,7 +198,7 @@
   $('downloadBtn').addEventListener('click', () => {
     const a = document.createElement('a');
     a.href = pdfUrl;
-    a.download = resumeConfig.file;
+    a.download = resumeFile;
     document.body.appendChild(a);
     a.click();
     a.remove();
@@ -217,7 +208,7 @@
   $('shareBtn').addEventListener('click', async () => {
     try {
       const base = location.origin + location.pathname.replace(/index\.html$/, '').replace(/\/resume\.html$/, '');
-      await navigator.clipboard.writeText(`${base}/resume.html?role=${role}`);
+      await navigator.clipboard.writeText(`${base}/resume.html`);
       showToast('Resume link copied!');
     } catch (e) { showToast('Copy failed'); }
   });
