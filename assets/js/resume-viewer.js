@@ -56,6 +56,7 @@
     pageNum = num;
 
     skeleton.style.display = 'block';
+    document.body.dataset.documentState = 'rendering';
     canvas.classList.add('fade-out');
 
     const page = await pdfDoc.getPage(num);
@@ -91,6 +92,7 @@
     canvas.classList.add('fade-in');
     setTimeout(() => canvas.classList.remove('fade-in'), 300);
     skeleton.style.display = 'none';
+    document.body.dataset.documentState = 'ready';
 
     if (pageInput) { pageInput.value = pageNum; pageInput.max = pdfDoc.numPages; }
     if (pageTotal) pageTotal.textContent = pdfDoc.numPages;
