@@ -276,10 +276,21 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: radial-gradient(circle at center, hsl(230, 45%, 12%) 0%, hsl(230, 50%, 6%) 50%, hsl(230, 50%, 2%) 100%);
+      background: radial-gradient(circle at 50% 42%, hsl(230, 42%, 13%) 0%, hsl(230, 50%, 6%) 52%, hsl(230, 50%, 2%) 100%);
       overflow: hidden;
+      isolation: isolate;
       transition: opacity 0.8s ease, visibility 0.8s ease;
     }
+
+    .preloader-grid { position: absolute; inset: 0; z-index: -1; opacity: .2; background-image: linear-gradient(hsla(220, 100%, 75%, .08) 1px, transparent 1px), linear-gradient(90deg, hsla(220, 100%, 75%, .08) 1px, transparent 1px); background-size: 64px 64px; mask-image: radial-gradient(circle, #000 0%, transparent 70%); animation: gridDrift 16s linear infinite; }
+    .preloader-grid::after { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 50% 40%, transparent 0 16%, hsla(220, 100%, 68%, .08) 16.2%, transparent 16.5% 28%, hsla(285, 100%, 78%, .06) 28.2%, transparent 28.5%); }
+    .preloader-console { position: absolute; top: 28px; left: 32px; right: 32px; display: flex; justify-content: space-between; color: hsla(195, 100%, 80%, .45); font: 500 10px/1.4 monospace; letter-spacing: .2em; }
+    .orbit-readout { position: absolute; top: 7px; left: 50%; width: 100%; transform: translateX(-50%); display: flex; justify-content: space-between; color: hsla(195, 100%, 80%, .58); font: 500 9px/1.4 monospace; letter-spacing: .16em; }
+    .preloader-kicker { margin: 0 0 12px; color: hsla(195, 100%, 80%, .5); font: 500 9px/1.4 monospace; letter-spacing: .22em; text-transform: uppercase; }
+    .preloader-status { display: flex; align-items: center; gap: 8px; margin-top: 18px; color: hsla(0, 0%, 88%, .48); font: 400 10px/1.4 monospace; letter-spacing: .14em; text-transform: uppercase; }
+    .status-pulse { width: 5px; height: 5px; border-radius: 50%; background: var(--cyber-cyan, hsl(195, 100%, 72%)); box-shadow: 0 0 12px var(--cyber-cyan, hsl(195, 100%, 72%)); animation: statusPulse 1.2s ease-in-out infinite; }
+    @keyframes gridDrift { to { transform: translate3d(32px, 32px, 0); } }
+    @keyframes statusPulse { 50% { opacity: .35; transform: scale(.7); } }
 
     .preloader-center-stage {
       position: relative;
@@ -395,18 +406,20 @@
       transition: all 0.5s cubic-bezier(0.6, 0, 0.1, 1);
     }
     
-    #premium-preloader.fade-out {
-      opacity: 0;
-      visibility: hidden;
-    }
+    #premium-preloader.fade-out { opacity: 0; visibility: hidden; }
+    @media (max-width: 600px) { .preloader-center-stage { width: 230px; height: 230px; } .hero-lottie { width: 148px; height: 148px; } .brand-name { font-size: 16px; letter-spacing: 8px; } .preloader-console { top: 20px; left: 18px; right: 18px; font-size: 8px; } .preloader-kicker { font-size: 8px; letter-spacing: .14em; } .orbit-readout { font-size: 8px; } }
+    @media (prefers-reduced-motion: reduce) { .preloader-grid, .status-pulse, .brand-name, .brand-tagline { animation: none; } #premium-preloader { transition-duration: .2s; } }
   </style>
 </head>
 
 <body>
 
   <!-- Immersive Preloader -->
-  <div id="premium-preloader">
+  <div id="premium-preloader" role="status" aria-live="polite" aria-label="Loading Rajath Kiran A portfolio">
+    <div class="preloader-grid" aria-hidden="true"></div>
+    <div class="preloader-console" aria-hidden="true"><span>RAJATH.OS</span><span>PORTFOLIO / 2026</span></div>
     <div class="preloader-center-stage">
+      <div class="orbit-readout" aria-hidden="true"><span>SYS / ONLINE</span><span id="preloader-percent">00%</span></div>
       <svg class="orbital-ring" viewBox="0 0 200 200">
         <defs>
           <linearGradient id="orbit-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -421,8 +434,10 @@
       <div id="lottie-loader" class="hero-lottie"></div>
     </div>
     <div class="preloader-typography">
+      <p class="preloader-kicker">INITIALIZING / PERSONAL PORTFOLIO</p>
       <h1 class="brand-name">Rajath Kiran A</h1>
       <p class="brand-tagline">Cloud Engineer <span class="dot">·</span> AI/ML Developer</p>
+      <div class="preloader-status" aria-hidden="true"><span class="status-pulse"></span><span id="preloader-status-text">Booting creative systems</span></div>
     </div>
   </div>
 
@@ -2110,6 +2125,8 @@
 
       // ── Orbital Progress Tracker ──
       const orbit = document.getElementById('orbit-progress');
+      const percentLabel = document.getElementById('preloader-percent');
+      const statusLabel = document.getElementById('preloader-status-text');
       const maxOffset = 565.48; // Circumference of r=90
       let progress = 0;
       let loaded = false;
@@ -2125,6 +2142,9 @@
           const easeT = 1 - Math.pow(1 - t, 3);
           
           progress = start + (targetPct - start) * easeT;
+          if (percentLabel) percentLabel.textContent = `${Math.round(progress).toString().padStart(2, '0')}%`;
+          if (statusLabel && progress > 72) statusLabel.textContent = 'Calibrating cloud systems';
+          if (statusLabel && progress > 92) statusLabel.textContent = 'Portfolio ready to launch';
           
           if (orbit) {
             const currentOffset = maxOffset - (maxOffset * (progress / 100));
