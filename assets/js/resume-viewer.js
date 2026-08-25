@@ -283,10 +283,17 @@
   });
 
   /* ---- Resize ---- */
-  window.addEventListener('resize', () => queueRender(pageNum, true));
-  if ('ResizeObserver' in window) {
-    new ResizeObserver(() => queueRender(pageNum, true)).observe(container);
-  }
+  // The canvas itself changes the container size while rendering. Observing it
+  // creates a render → resize → render loop, which causes visible blinking.
+  let resizeTimer = null;
+  let lastViewportWidth = 0;
+  window.addEventListener('resize', () => {
+    const width = container?.clientWidth || window.innerWidth;
+    if (Math.abs(width - lastViewportWidth) < 2) return;
+    lastViewportWidth = width;
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => queueRender(pageNum, true), 160);
+  });
 
   /* ---- Init ---- */
   if (window.pdfjsLib) loadPdf();
